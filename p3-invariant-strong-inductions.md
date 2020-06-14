@@ -3,6 +3,47 @@
 Good proofs are correct, complete, clear, brief, "elegant", well-organized, in order
 (for example use lemmas the same way you would use subroutines in writing code)
 
+## Methods Useful for All Natural Numbers
+
+- Well Ordering Principle
+- Induction Rule
+- Strong Induction
+
+These methods are useful when you need to prove that a predicate is True for all natural numbers.
+
+## Well Ordering Principle
+
+**Every _non-empty_ set of _non-negative_ integers has a _smallest_ element**
+
+- must be non-empty set: it is False for empty set which has **no smallest element** because it has NO elements at all!
+- must be non-negative integers: it is False for sets of negative integers, and also False for non-negative **rationals**
+    - The positive rationals are not Well Ordered: The subset `{1, 1/2, 1/4, 1/8, 1/16, ...}` has no least element.
+    - An equivalent statement is that no infinitely descending chain `a0>a1>a2>a3>....` can exist.
+- WOP captures something special about the non-negative integers
+- WOP provides **one of the most important proof rules in discrete mathematics**
+- **Key: "assume a smallest element/counterexample/where predicate fails, m <- C"**, usually by finding c <- C wtih c < m, contradiction
+
+### example of WOP on m/n
+
+for any positive integers m and n, the fraction m/n can be written in lowest terms, that is, in the form of m'/n' where m' and n' are positive integers with no common factors. How do we know this is always possible? (Predicate P(n) ::= any rational or fractions can be expressed in lowest terms)
+
+Suppose there were m, b <- Z+ such that m/n cannot be written in lowest terms. Let C be the set of positive integers that are numerators of such fractions, and m <- C, so C is _non-empty_. By Well Ordering, there must be a _smallest_ integer m0 <- C, so there must be a m0 such that m0/n0 cannot be written in lowest terms.
+
+This means that there must be a common factor p, p > 1, m0/p, the numerator is also in C, but m0/p < m0, which contradicts the fact that m0 is the _smallest_ element of C. Therefore counterexample to P(n) does not exist. QED
+
+## example of WOP on natural number as product of primes
+
+- Assume C is the set of all integers > 1 that cannot be factored as a product of primes.
+- C is _non-empty_, so n <- C, and n is the _smallest_ element, by WOP
+- A prime itself is considered a product of prime, so n cannot be prime
+- So n must be a product of two integers j and k, where 1 < j,k < n
+- **Since j and k are smaller than the smallest element n in C, j and k are no in C** (n is the smallest such number that is not a prime product)
+- j and k are therefore product of primes
+- n = j * k = product of primes, contradiction QED
+
+## Well Ordering Principle VS Induction
+
+
 ## Invariant
 
 Invariant is a very powerful and commonly used concept in computer science, very closely tied to induction.
