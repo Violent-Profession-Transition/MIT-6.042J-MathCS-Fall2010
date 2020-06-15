@@ -124,4 +124,11 @@ Easier to prove something that is harder. When `P(n)` gets more powerful, you ge
 
 **If you dont succeed at first with induction, dont try again, try something harder**
 
-**It is the art of picking a good inductive hypothesis `P(n) => P(n+1)`**
+**It is the art of picking a good inductive hypothesis, ie the predicate P(n), such that `P(n) => P(n+1)`**
+
+Strengthening the induction hypothesis is often a good move when an induction proof won't go through. **BUT keep in mind that the stronger assertion must actually be True**.
+
+**Finding just the right induction hypothesis requires trial, error and insight**
+
+The key turned out to be finding an extremely clever induction hypothesis, P(n)
+

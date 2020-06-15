@@ -43,14 +43,17 @@ This means that there must be a common factor p, p > 1, m0/p, the numerator is a
 
 ## Well Ordering Principle VS Induction
 
+Well Ordering Principle and the Induction Rules are closely related. We can take any Well Ordering proof and reformat it into an Induction proof, and vice versa.
 
 ## Invariant
 
 Invariant is a very powerful and commonly used concept in computer science, very closely tied to induction.
 
+Invariants are useful in systems that have a _start state (or starting configuration)_ and a well-defined series of _steps_ during which the system can change state (state machines)
+
 In order to show your system can never reach a particular special state, it is sufficient to show there is some property called the invariant that holds at the initial state, and is preserved by every legal move, and is not present, does not hold, in that special state.
 
-**Invariant proofs are always by induction. The invariant and inductive hypothesis become one and the same**
+**Invariant proofs are always by induction. The invariant and inductive hypothesis become one and the same. We typically use induction to prove that a proposition is an invariant.**
 
 Our inductive hypothesis is that `P(n)` after any sequence of `n` moves, `n` is the number of moves you took to get there, from the start state, the parity of the number of inversions is odd. That is the inductive hypothesis, and it is same as the invariant.
 

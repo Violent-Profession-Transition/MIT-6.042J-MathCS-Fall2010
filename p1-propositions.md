@@ -97,7 +97,28 @@ it is IMPOSSIBLE to get a set of axioms that satisfy both consistency and comple
 
 **If you want consistency, and that is a must, there will be true facts that you will never be able to prove**
 
+## Validity
+
+A propositional formula is **valid** when it evaluates to True no matter what truth values are assigned to the individual propositional variables.
+
+The same idea extends to predicate formulas, it must evaluate to True no matter what values its varibles may take over _any unspecified_ domain, and no matter what interpretation a predicate variable may be given.
+
+Examples of valid assertions:
+- Distributive Law  P AND (Q OR R) == (P AND Q) OR (P AND R)
+- rule of negating a quantifier
+- there exists x, for all y, P(x, y) is True => for all y, there exists x, P(x, y) is True _(P is a binary predicate, for example, P(x, y) mean x divides y)_
+
+## Satisfiability
+
+A Proposition is **satisfiable** if _some setting of the variables_ make the proposition True. For example, `P AND NOT(Q)` is satisfiable because the expression is True if P is True and Q is False. But `P AND NOT(P)` is not satisfiable because the expression can never be True for any setting of P.
+
 ## SAT
 
 The general problem of deciding whether a proposition is satisfiable is called _SAT_
+
+SAT  = Satisfiability
+
+Given a Boolean formula over `n` variables, can you set the variables to make the formula True?
+
+SAT is one of the first problems to be proven to be NP-complete.
 
