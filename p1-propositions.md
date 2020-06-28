@@ -122,3 +122,25 @@ Given a Boolean formula over `n` variables, can you set the variables to make th
 
 SAT is one of the first problems to be proven to be NP-complete.
 
+## XOR
+
+The value of (P XOR Q) is True IFF **exactly one** of P and Q is True.
+
+## Equivalence
+
+Two propositional formulas are **equivalent** IFF they have the **same** truth values in **all environments**
+
+One example is DeMorgan's Law
+
+## SAT vs VALID
+
+To check that `G` is _valid_, can check that `NOT(G)` is _not satisfiable_
+
+## for All is like AND
+
+Let `s` range over the set of staff, `P(s) ::= [s is pumped about the course]`
+
+For All `s`, `P(s)` is the same as:
+P(a) AND P(b) AND P(c) AND ... AND P(z)
+
+## there exists is like OR
