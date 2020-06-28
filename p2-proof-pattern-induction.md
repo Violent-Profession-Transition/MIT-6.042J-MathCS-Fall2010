@@ -103,7 +103,7 @@ The reason induction is an axiom is the **`and so on forever part`**
 2. Then figure out what is your predicate, your inductive hypothesis, what is `P(n)`
 3. Check the **Base case**
 4. Inductive step
-5. Assume `P(n)` is True, for purposes of induction or for purposes of verifying the inductive hypothesis (just to let us know why you are assuming it, in other words you are no assuming P(n) is true for purposes of contradiction)
+5. Assume `P(n)` is True, for purposes of induction or for purposes of verifying the inductive hypothesis (just to let us know why you are assuming it, in other words you are not assuming P(n) is true for purposes of contradiction)
 
 Assuming what we are trying to prove, we are trying prove that P(n) is true for all n, and we just assumed it. **But we are assuming it in the context of establing that `P(n) => P(n+1)` is true**, then we apply the induction axiom to conclue P(n) is True for all n.
 

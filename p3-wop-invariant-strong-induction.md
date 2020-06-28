@@ -19,6 +19,7 @@ These methods are useful when you need to prove that a predicate is True for all
 - must be non-negative integers: it is False for sets of negative integers, and also False for non-negative **rationals**
     - The positive rationals are not Well Ordered: The subset `{1, 1/2, 1/4, 1/8, 1/16, ...}` has no least element.
     - An equivalent statement is that no infinitely descending chain `a0>a1>a2>a3>....` can exist.
+    - **A set of numbers is well ordered when each of its nonempty subsets has a minimum element.**
 - WOP captures something special about the non-negative integers
 - WOP provides **one of the most important proof rules in discrete mathematics**
 - **Key: "assume a smallest element/counterexample/where predicate fails, m <- C"**, usually by finding c <- C wtih c < m, contradiction
@@ -41,9 +42,15 @@ This means that there must be a common factor p, p > 1, m0/p, the numerator is a
 - j and k are therefore product of primes
 - n = j * k = product of primes, contradiction QED
 
+## Recipe for WOP
+
+A Well Ordering Proof starts with the assumption that the set of counterexamples is not empty. It then follows that this set must have a smallest element, by the Well Ordering Principle. Much of the math focuses on showing that the set is empty or that there is another element in the set of counterexamples that is even smaller than the smallest element.
+
 ## Well Ordering Principle VS Induction
 
 Well Ordering Principle and the Induction Rules are closely related. We can take any Well Ordering proof and reformat it into an Induction proof, and vice versa.
+
+Induction and WOP are rephrasing of the same logical principle. _Which to use is a mater of taste_
 
 ## Invariant
 
