@@ -86,13 +86,15 @@ The GCD of the two encrypted messages `m1*` and `m2*` is the secret key `k`. The
 
 ## Modular Arithmetic
 
-Gauss introduced the notion of **congruence: a is congruent to b modulo n iff  n | (a-b)** (definition of modular arithmetic)
+Gauss introduced the notion of **congruence: a is congruent to b modulo n iff  n | (a-b)** (definition of modular arithmetic), n > 1. _the definition using remainder (remainder lemma) is an equivalent formulation_
 
 ```
 a ≡ b (mod n)
 ```
 
 For example 29 ≡ 15 (mod 7) because 7 | (29 - 15) = 7 | 14
+
+Congruence is a relation between two numbers, a and b
 
 **There is a close connection between congruences and remainders: `a ≡ b (mod n)` iff `rem(a,n) = rem(b,b)`**
 
@@ -118,12 +120,56 @@ according to whether their remainders on division by 3 are 0, 1, or 2
 
 **When arithmetic is done modulo n, there are only n different kinds of numbers to worry about, because there are only n possible remainders**
 
-## Congruences work a lot like equations
+## Congruences work a lot like equations (ordinary equaliy)
 
 ```
 a ≡ b (mod n) and c ≡ d (mod n) => a+c ≡ b+d (mod n)
 a ≡ b (mod n) and c ≡ d (mod n) => ac ≡ bd (mod n)
 ```
 
+You can freely substituting any number by a number that it is congruent to, and the final congruence result of the formula is unchanged
+
+**congruence and `a ≡ rem(a,n) (mod n)` keeps `(mod n)` arithmetic in the remainder range, thus keeping the range [0, n)**
+
+## Congruence modulo n tricks
+
+666666663 ≡  7878787687623 (mod 10), because the substraction of two numbers ending in 3 is divisible by 10
+
+
+`a ≡ rem(a,n) (mod n)`, which **basically allows us whenever we feel like it to replace numbers by their remainders**
+
+```
+287^9 ≡ ? (mod 4)
+
+since rem(287,4) = 3
+287^9 ≡ 3^9 (mod 4)
+
+3^9 = 9^2^2 * 3
+since rem(9, 4) = 1
+3^9 ≡ 1^2^2 * 3 (mod 4)
+
+therefore
+287^9 ≡ 3 (mod 4)
+```
+
+## When Congruence mod n is NOT like ordinary arithmetic
+
+### No Arbitrary Cancellation
+
+k is cancellable (mod n) iff k has an inverse (mod n) iff gcd(k,n) =1 or k is relatively prime to n
+
+### Inverse exists for modulo a prime
+
+`7 * 3 ≡ 1 (mod 5)`, so 7 and 3 are multiplicative inverses
+
+All numbers congruent to 3 modulo 5 are also multiplicative inverses of 7, for example `7 * 8 ≡ 1 (mod 5)`
+
+Numbers congruent to 0 modulo n (multiples of n) do not have inverses, much as 0 does not have an invrese over the real numbers
+
+## Turing Code Version 2 using Modular Arithmetic
+
+Beforehand: Sender and receiver agree on a large prime `p`, which may be made public, and used as the modulus for all the arithmetic. Also there is a secret key `k <- {1,2,..., p-1}`
+
+Encryption: message `m` can be any integer <= p-1, message `m`  no longer needs to be a prime. The sender encrypts the message `m` to produce `m*` by: `m* = rem(mk,p)`
 
 
