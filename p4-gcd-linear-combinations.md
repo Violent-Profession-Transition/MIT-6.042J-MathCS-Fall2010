@@ -2,6 +2,8 @@
 
 Number theory is the study of **integers**: _all the variables in number theory are taking integer values, ie domain of discourse is Z_
 
+Number theory is the basis for numerous public-key cryptosystems, digital signature schemes, cryptographic hash functions, and electronic payment systems.
+
 ## quotient and remainder
 
 **The Division Theorem: there exists unique numbers `q, r` such that `a = qb + r` and `0<= r < b`**
