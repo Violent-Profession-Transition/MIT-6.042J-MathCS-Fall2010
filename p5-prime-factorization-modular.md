@@ -192,3 +192,29 @@ _All we need to decrypt the message is to find a k^-1_. We know that t is such a
 
 Turing's code permutes the set of possible messages (sequence of remainders)
 
+## Fermat's Little Theorem for Modular Inverse
+
+An alternative approach to finding the inverse of the secret key `k` is Fermat's Little Theorem:
+
+```
+Suppose p is a prime, and k is not a multiple of p
+
+Then
+
+k^(p-1) ≡ 1 (mod p)
+```
+
+**(p-1)! is NOT a multiple of p because the prime factorizations of 1, 2, ... (p-2), (p-1) contain only primes smaller tha p**
+
+By Fermat's Little Theorem, we can find multiplicative inverse of k by
+
+```
+k^(p-2) * k ≡ 1 (mod p)
+```
+
+In general if we work with modulo a prime p, finding multiplicative inverse by trying every value between 1 and p-1. However, using Fermat's Little Theorem, we only need 2logp operations, which is far better when p is large.
+
+## Known-Plaintext Attack
+
+When Nazis know both m and `m*`, where `m* ≡ mk (mod p)`, then `m^(p-2) * m* ≡ k (mod p)`. They will have the secret key `k` and can decrypt any message.
+
