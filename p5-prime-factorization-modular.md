@@ -166,10 +166,29 @@ All numbers congruent to 3 modulo 5 are also multiplicative inverses of 7, for e
 
 Numbers congruent to 0 modulo n (multiples of n) do not have inverses, much as 0 does not have an invrese over the real numbers
 
+If p is a prime and k is not a multiple of p, then k has a multiplicative inverse modulo p. `p | (1-tk)` => `tk ≡ 1 (mod p)`, thus a t exists as a multiplicative inverse of k
+
 ## Turing Code Version 2 using Modular Arithmetic
 
 Beforehand: Sender and receiver agree on a large prime `p`, which may be made public, and used as the modulus for all the arithmetic. Also there is a secret key `k <- {1,2,..., p-1}`
 
 Encryption: message `m` can be any integer <= p-1, message `m`  no longer needs to be a prime. The sender encrypts the message `m` to produce `m*` by: `m* = rem(mk,p)`
 
+`mk ≡ rem(mk,p) (mod p)` => `mk ≡ m* (mod p)`
+
+**Multiplicative inverses are the key to decryption in Turing's code**
+
+```
+mk ≡ m* (mod p)
+mk * k^-1 ≡ m* * k^-1 (mod p)
+m ≡ m* * k^-1 (mod p)
+```
+
+This shows that `m* * k^-1` is congruent to the original message `m`
+
+Since m is in the range 0, 1, ..., p-1, `m = rem(m* * k^-1, p)`
+
+_All we need to decrypt the message is to find a k^-1_. We know that t is such a value, where `sp + tk = 1`. Finding t is easy using the **Pulverizer**
+
+Turing's code permutes the set of possible messages (sequence of remainders)
 
